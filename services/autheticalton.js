@@ -17,7 +17,7 @@ function createTokenforUser(user){
 
 function validateToken(token){
 
-
+// I am happy Now ok
     return JWT.verify(token,secret)
 }
 
