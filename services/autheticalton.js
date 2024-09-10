@@ -12,7 +12,7 @@ function createTokenforUser(user){
         role:user.role
  },secret)
 
- 
+//  
 }
 
 
