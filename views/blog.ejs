@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <%- include("./partials/head.ejs") %>
+    </head>
+
+    <body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="container mt-4">
+
+        <h1><%= blog.title %></h1>
+
+        <img src="<%= blog.coverImage %>" alt="">
+
+        <pre><%= blog. content %></pre>
+
+     
+    </div>
+    <div class="container mt-4">
+        <img src="<%=blog.createdBy.profileImageURL.slice(7)%>" alt="" width="50px"><%=blog.createdBy.fullName%>
+
+
+    </div>
+
+        <% if (locals.user) { %>
+         
+        
+    <div class="container mt-3">
+        <h1>comments <%=comments.length%></h1>
+        </div>
+
+        <form method="post" action='/blog/comment/<%=blog._id %>'>
+        
+            
+            <div class="mb-3"> 
+              
+                <input type="text" class="form-control" name="content" aria-describedby="content" placeholder="Enter Your Comment">
+
+            </div>
+
+            <button type="submit" class="btn  btn-sm btn-primary">Submit</button>
+            </form>
+
+           
+            
+    <% } %>
+    <%comments.forEach(comment => { %>
+        <div>
+       <img src="<%=comment.createdBy.profileImageURL.slice(7)%>" alt="" width="50px"><%=blog.createdBy.fullName%>:<pre><%= comment. content  %></pre>
+        </div>
+       <% }) %>
+    
+    <%- include("./partials/script.ejs") %>
+    
+    </body>
+
+</html>
+
+
+<!-- 
+crickbuzz
+
+
+performace monitor 
+monolothic and microservies actur=uctur 
+pipeline -->
+
+
+
