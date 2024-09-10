@@ -10,14 +10,11 @@ function createTokenforUser(user){
         email:user.email,
         profileImageURL:user. profileImageURL,
         role:user.role
-
-    },secret)
+ },secret)
 }
 
 
 function validateToken(token){
-
-// I am happy Now ok
     return JWT.verify(token,secret)
 }
 
