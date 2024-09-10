@@ -11,6 +11,8 @@ function createTokenforUser(user){
         profileImageURL:user. profileImageURL,
         role:user.role
  },secret)
+
+ 
 }
 
 
